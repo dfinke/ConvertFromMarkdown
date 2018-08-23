@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/wlicjvunew1er5yv/branch/master?svg=true)](https://ci.appveyor.com/project/dfinke/convertfromreadmemd/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/osa83wnuhjvfm9p6?svg=true](https://ci.appveyor.com/project/dfinke/convertfrommarkdown)
 
 
 ## Updates
@@ -8,7 +8,7 @@
 - Added `<!-- EXCLUDE CODE START -->` and `<!-- EXCLUDE CODE END -->`. For example, if have code blocks that define the same class, you can exclude
  it so PSScriptAnalyzer doesn't fail
 
-# Convert From Readme.md
+# Convert From Markdown
 Quickly re-purpose your markdown as input to a service like LeanPub (for self publishing), and run the PowerShell ScriptAnalyzer against your PowerShell samples in the markdown.
 
 This PowerShell module significantly improves your workflow for authoring your PowerShell `README.md`
