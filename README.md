@@ -1,5 +1,6 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/osa83wnuhjvfm9p6?svg=true](https://ci.appveyor.com/project/dfinke/convertfrommarkdown)
-
+<p align="center">
+<a href="https://ci.appveyor.com/project/dfinke/convertfrommarkdown/branch/master"><img src="https://ci.appveyor.com/api/projects/status/osa83wnuhjvfm9p6/branch/master?svg=true"></a>
+</p>
 
 ## Updates
 
