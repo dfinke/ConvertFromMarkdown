@@ -22,7 +22,7 @@ Describe "Converfrom ReadmdMD" {
         (Get-ChildItem $env:TEMP\manuscript | Measure-Object ).Count | Should Be 6
     }
 
-    It "Read from the web, should have six files in the manuscript directory" -Skip {
+    It "Read from the web, should have six files in the manuscript directory" {
         ConvertFrom-Markdown https://raw.githubusercontent.com/dfinke/ConvertFromMarkdown/master/__tests__/README.md $env:TEMP
         (Get-ChildItem $env:TEMP\manuscript | Measure-Object ).Count | Should Be 6
     }
@@ -52,7 +52,7 @@ Describe "Converfrom ReadmdMD" {
         Test-Path $env:TEMP\lintThis.ps1 | Should Be $false
     }
 
-    It "Reads from the web, should create a test code blocks and delete lint file" -Skip {
+    It "Reads from the web, should create a test code blocks and delete lint file" {
         $actual = Test-PSCodeBlock https://raw.githubusercontent.com/dfinke/ConvertFromMarkdown/master/__tests__/READMEGoodCode.md $env:TEMP
         $actual | Should Be "all analyzed - no issues"
         Test-Path $env:TEMP\lintThis.ps1 | Should Be $false
