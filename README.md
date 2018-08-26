@@ -2,6 +2,10 @@
 <a href="https://ci.appveyor.com/project/dfinke/convertfrommarkdown/branch/master"><img src="https://ci.appveyor.com/api/projects/status/osa83wnuhjvfm9p6/branch/master?svg=true"></a>
 </p>
 
+## Convert From Markdown: In Action Video
+
+Check it out, [How to ConvertFrom-Markdown](https://www.youtube.com/watch?v=z41g58gwdFw&t=1s) with all the bells and whistles.
+
 ## Updates
 
 - Added `KeepLintFile` switch

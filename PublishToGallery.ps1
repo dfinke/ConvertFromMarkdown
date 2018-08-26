@@ -1,5 +1,5 @@
 $p = @{
-    Name = "ConvertFromReadmeMD"
+    Name = "ConvertFromMarkdown"
     NuGetApiKey = $NuGetApiKey
     #ReleaseNote = "Add NumberFormat parameter"
 }
