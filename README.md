@@ -4,11 +4,12 @@
 
 ## Convert From Markdown: In Action Video
 
-Check it out, [How to ConvertFrom-Markdown](https://www.youtube.com/watch?v=z41g58gwdFw&t=1s) with all the bells and whistles.
+Check it out, How to ConvertFrom-Markdown with all the bells and whistles.
 
-https://www.youtube.com/watch?v=z41g58gwdFw&t=1s
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=z41g58gwdFw" target="_blank">
+<img src="http://img.youtube.com/vi/z41g58gwdFw/0.jpg" alt="IMAGE ALT TEXT HERE" width="Convert From Markdown" height="180"  />
+</a>
 
-[![IMAGE ALT TEXT HERE]()]
 
 <!-- [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE) -->
 
