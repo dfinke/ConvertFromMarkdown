@@ -16,10 +16,18 @@ function ConvertFrom-Markdown {
     Write-Progress -Activity "Generating manuscript" -Status "[$(Get-Date)] Analyzing PowerShell"
     Test-PSCodeBlock  -markdownFile $markdownFile -outputPath $outputPath
 
-    if (!(Get-Command pandoc.exe -ErrorAction SilentlyContinue)) {return}
 
     #if ((Get-Command pandoc.exe -ErrorAction SilentlyContinue) -and $AsPDF) {
     if ($OutputType) {
+
+        if (!(Get-Command pandoc.exe -ErrorAction SilentlyContinue)) {
+            Write-Warning @"
+To generate that output tyype, you need to install Pandoc, https://pandoc.org/installing.html
+If you want a PDF, you need to also install LaTeX, https://miktex.org/
+"@
+            return
+        }
+
         $targetPath = "$($outputPath)\manuscript"
 
         # $chapters = (Get-Content "$targetPath\book.txt") -join ' '
