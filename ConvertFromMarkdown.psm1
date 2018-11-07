@@ -14,7 +14,7 @@ function ConvertFrom-Markdown {
     Export-Manuscript -markdownFile $markdownFile -outputPath $outputPath
 
     Write-Progress -Activity "Generating manuscript" -Status "[$(Get-Date)] Analyzing PowerShell"
-    Test-PSCodeBlock  -markdownFile $markdownFile -outputPath $outputPath
+    Test-PSCodeBlock -markdownFile $markdownFile -outputPath $outputPath
 
 
     #if ((Get-Command pandoc.exe -ErrorAction SilentlyContinue) -and $AsPDF) {
@@ -33,13 +33,18 @@ If you want a PDF, you need to also install LaTeX, https://miktex.org/
         # $chapters = (Get-Content "$targetPath\book.txt") -join ' '
         $chapters = (Get-ChildItem $targetPath chap* | ForEach-Object FullName ) -join ' '
 
-        $outFile = "$($targetPath)\book.$($OutputType)"
-        Write-Progress -Activity "Generating manuscript" -Status "[$(Get-Date)] Creating $($OutputType)"
-        "pandoc $chapters -S --toc --standalone -o $outFile" | Invoke-Expression
+        if ($chapters.trim().length -gt 0) {
+            $outFile = "$($targetPath)\book.$($OutputType)"
+            Write-Progress -Activity "Generating manuscript" -Status "[$(Get-Date)] Creating $($OutputType)"
+            "pandoc $chapters -S --toc --standalone -o $outFile" | Invoke-Expression
 
-        Write-Progress -Activity "Generating manuscript" -Status "[$(Get-Date)] Launching $($OutputType)"
-        if ($Show) {
-            Invoke-Item $outFile
+            Write-Progress -Activity "Generating manuscript" -Status "[$(Get-Date)] Launching $($OutputType)"
+            if ($Show) {
+                Invoke-Item $outFile
+            }
+        }
+        else {
+            "No chapters found"
         }
     }
 }

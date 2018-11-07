@@ -1,4 +1,4 @@
-Describe "Converfrom ReadmdMD" {
+Describe "Convertfrom ReadmdMD" {
 
     BeforeAll {
         Import-Module $PSScriptRoot\..\ConvertFromMarkdown.psm1 -Force
@@ -85,6 +85,26 @@ Describe "Converfrom ReadmdMD" {
 
     It "Should be a Uri" {
         Test-IsUri https://raw.githubusercontent.com/dfinke/ConvertFromMarkdown/master/README.md | Should Be $true
+    }
+
+    AfterAll {
+        Remove-Item $env:TEMP\manuscript -Recurse -Force -ErrorAction Ignore
+        Remove-Item $env:TEMP\lintThis.ps1 -Force -ErrorAction Ignore
+    }
+}
+
+Describe "Test markdown file with no chapters and no code" {
+    BeforeAll {
+        Import-Module $PSScriptRoot\..\ConvertFromMarkdown.psm1 -Force
+    }
+
+    It "Should report no code" {
+        $actual = ConvertFrom-Markdown $PSScriptRoot\changelog.md -OutputType PDF
+
+        $actual.Count | Should Be 2
+
+        $actual[0] | Should Be 'no code found'
+        $actual[1] | Should Be 'No chapters found'
     }
 
     AfterAll {
