@@ -24,6 +24,11 @@ function Export-Manuscript {
         $markdownContent = $markdownContent -split "`n"
     }
 
+    if (!($markdownContent -contains "<!-- CHAPTER START -->")) {
+        $inChapter = $true
+        $markdownContent += "<!-- CHAPTER END -->"
+    }
+
     # switch -File ($markdownFile) {
     switch ($markdownContent) {
 
