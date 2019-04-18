@@ -4,7 +4,7 @@
     RootModule        = 'ConvertFromMarkdown.psm1'
 
     # Version number of this module.
-    ModuleVersion     = '1.1.0'
+    ModuleVersion     = '1.2.0'
 
     # ID used to uniquely identify this module
     GUID              = '83c87d12-6c30-424f-ab67-9016daada1d4'
